@@ -9,7 +9,7 @@ public class GameOfLife {
 
     public void run(int steps) {
         for (int i = 0; i < steps; ++i) {
-            if (current.isExtint())
+            if (current.isExtinct())
                 return;
             current = current.produceNextGeneration();
         }

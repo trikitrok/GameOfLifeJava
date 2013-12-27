@@ -10,7 +10,7 @@ public class Generation {
         this.rules = rules;
     }
 
-    public boolean isExtint() {
+    public boolean isExtinct() {
         return livingCells.empty();
     }
 

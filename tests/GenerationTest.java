@@ -14,11 +14,11 @@ public class GenerationTest {
         LivingCells cells = new LivingCells();
         Generation current = new Generation(cells, new ConwaysRules());
 
-        assertTrue(current.isExtint());
+        assertTrue(current.isExtinct());
 
         Generation next = current.produceNextGeneration();
 
-        assertTrue(next.isExtint());
+        assertTrue(next.isExtinct());
     }
 
     @Test
@@ -32,7 +32,7 @@ public class GenerationTest {
 
         Generation next = current.produceNextGeneration();
 
-        assertFalse(next.isExtint());
+        assertFalse(next.isExtinct());
         assertEquals("[(0, 0), (0, 1), (1, 1), (1, 0)]", next.toString());
     }
 
@@ -46,7 +46,7 @@ public class GenerationTest {
 
         Generation next = current.produceNextGeneration();
 
-        assertFalse(next.isExtint());
+        assertFalse(next.isExtinct());
         assertEquals("[(0, 0)]", next.toString());
     }
 
@@ -61,7 +61,7 @@ public class GenerationTest {
 
         Generation next = current.produceNextGeneration();
 
-        assertFalse(next.isExtint());
+        assertFalse(next.isExtinct());
         assertEquals("[(0, 0), (0, 1), (-1, 0)]", next.toString());
     }
 }

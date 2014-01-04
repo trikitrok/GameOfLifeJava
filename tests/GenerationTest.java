@@ -22,7 +22,7 @@ public class GenerationTest {
     }
 
     @Test
-    public void squareRemainsTheSame() {
+    public void aBlockRemainsTheSame() {
         LivingCells cells = new LivingCells();
         cells.add(new ConwaysCell(0, 0));
         cells.add(new ConwaysCell(0, 1));

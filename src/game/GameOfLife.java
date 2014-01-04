@@ -14,4 +14,9 @@ public class GameOfLife {
             current = current.produceNextGeneration();
         }
     }
+
+    @Override
+    public String toString() {
+        return current.toString();
+    }
 }

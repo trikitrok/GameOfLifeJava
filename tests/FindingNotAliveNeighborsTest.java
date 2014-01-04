@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import cell.types.ConwaysCell;
 
-public class CandidatesGenerationTest {
+public class FindingNotAliveNeighborsTest {
 
     private LivingCells livingCells;
 

@@ -14,7 +14,7 @@ public class Generation {
         return livingCells.empty();
     }
 
-    public Generation produceNextGeneration() {
+    public Generation produceNext() {
         LivingCells next = new LivingCells();
 
         addSurvivors(next);

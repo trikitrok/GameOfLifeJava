@@ -1,22 +1,22 @@
 package game;
 
 public class GameOfLife {
-    private Generation current;
+    private Generation currentGeneration;
 
     public GameOfLife(Generation initialGeneration) {
-        this.current = initialGeneration;
+        this.currentGeneration = initialGeneration;
     }
 
     public void run(int steps) {
         for (int i = 0; i < steps; ++i) {
-            if (current.isExtinct())
+            if (currentGeneration.isExtinct())
                 return;
-            current = current.produceNextGeneration();
+            currentGeneration = currentGeneration.produceNext();
         }
     }
 
     @Override
     public String toString() {
-        return current.toString();
+        return currentGeneration.toString();
     }
 }

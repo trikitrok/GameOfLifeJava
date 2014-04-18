@@ -15,29 +15,23 @@ public class ConwaysRulesTest {
     }
 
     @Test
-    public void lessThanTwoNeighborsDies() {
-        assertFalse(rules.shouldStayAlive(0));
+    public void diesBecauseOfUnderpopulation() {
         assertFalse(rules.shouldStayAlive(1));
     }
 
     @Test
-    public void twoNeighborsStaysAlive() {
+    public void staysAlive() {
         assertTrue(rules.shouldStayAlive(2));
-    }
-
-    @Test
-    public void threeNeighborsStaysAlive() {
         assertTrue(rules.shouldStayAlive(3));
     }
 
     @Test
-    public void moreThanThreeNeighborsDies() {
+    public void diesBecauseOfOverpopulation() {
         assertFalse(rules.shouldStayAlive(4));
-        assertFalse(rules.shouldStayAlive(5));
     }
 
     @Test
-    public void threeNeighborsIsBorn() {
+    public void aCellIsBorn() {
         assertTrue(rules.shouldBeBorn(3));
     }
 }

@@ -18,8 +18,10 @@ public class LivingCells extends Cells {
     }
 
     public int getAliveNeighborsNumberFor(Cell cell) {
-        Cells neighbors = cell.getNeighbors();
+        return countAlive(cell.getNeighbors());
+    }
 
+    private int countAlive(Cells neighbors) {
         int numberOfAliveNeighbors = 0;
 
         for (Cell neighbor : neighbors) {

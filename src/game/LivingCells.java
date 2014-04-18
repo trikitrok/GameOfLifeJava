@@ -24,12 +24,10 @@ public class LivingCells extends Cells {
 
     private int countAlive(Cells neighbors) {
         int numberOfAliveNeighbors = 0;
-
         for (Cell neighbor : neighbors) {
             if (isAlive(neighbor))
                 numberOfAliveNeighbors++;
         }
-
         return numberOfAliveNeighbors;
     }
 

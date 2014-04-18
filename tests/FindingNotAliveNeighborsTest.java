@@ -18,12 +18,12 @@ public class FindingNotAliveNeighborsTest {
     }
 
     @Test
-    public void noCandidates() {
+    public void noNotAliveNeighbors() {
         assertTrue(livingCells.getNotAliveNeighbors().empty());
     }
 
     @Test
-    public void candidates() {
+    public void someNotAliveNeighbors() {
         livingCells.add(new ConwaysCell(1, 1));
 
         assertEquals(expectedNotAliveNeighbors(), livingCells.getNotAliveNeighbors());

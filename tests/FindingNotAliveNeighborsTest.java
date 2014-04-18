@@ -26,16 +26,16 @@ public class FindingNotAliveNeighborsTest {
     public void candidates() {
         livingCells.add(new ConwaysCell(1, 1));
 
-        Cells expectedCandidates = new Cells();
-        expectedCandidates.add(new ConwaysCell(0, 0));
-        expectedCandidates.add(new ConwaysCell(0, 1));
-        expectedCandidates.add(new ConwaysCell(0, 2));
-        expectedCandidates.add(new ConwaysCell(1, 0));
-        expectedCandidates.add(new ConwaysCell(1, 2));
-        expectedCandidates.add(new ConwaysCell(2, 0));
-        expectedCandidates.add(new ConwaysCell(2, 1));
-        expectedCandidates.add(new ConwaysCell(2, 2));
+        Cells expectedNotAliveNeighbors = new Cells();
+        expectedNotAliveNeighbors.add(new ConwaysCell(0, 0));
+        expectedNotAliveNeighbors.add(new ConwaysCell(0, 1));
+        expectedNotAliveNeighbors.add(new ConwaysCell(0, 2));
+        expectedNotAliveNeighbors.add(new ConwaysCell(1, 0));
+        expectedNotAliveNeighbors.add(new ConwaysCell(1, 2));
+        expectedNotAliveNeighbors.add(new ConwaysCell(2, 0));
+        expectedNotAliveNeighbors.add(new ConwaysCell(2, 1));
+        expectedNotAliveNeighbors.add(new ConwaysCell(2, 2));
 
-        assertEquals(expectedCandidates, livingCells.getNotAliveNeighbors());
+        assertEquals(expectedNotAliveNeighbors, livingCells.getNotAliveNeighbors());
     }
 }

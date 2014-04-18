@@ -41,34 +41,15 @@ public class Generation {
     }
 
     private boolean willSurvive(Cell cell) {
-        return rules.shouldStayAlive(livingCells
-                .getAliveNeighborsNumberFor(cell));
+        return rules.shouldStayAlive(livingCells.getAliveNeighborsNumberFor(cell));
     }
 
     private boolean willBeBorn(Cell cell) {
-        return rules.shouldBeBorn(livingCells
-                .getAliveNeighborsNumberFor(cell));
+        return rules.shouldBeBorn(livingCells.getAliveNeighborsNumberFor(cell));
     }
 
     @Override
     public String toString() {
         return "[" + livingCells.toString() + "]";
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Generation other = (Generation) obj;
-        if (livingCells == null) {
-            if (other.livingCells != null)
-                return false;
-        } else if (!livingCells.equals(other.livingCells))
-            return false;
-        return true;
     }
 }

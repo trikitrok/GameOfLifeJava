@@ -5,7 +5,7 @@ public class LivingCells extends Cells {
     public Cells getNotAliveNeighbors() {
         Cells candidates = new Cells();
 
-        for (Cell cell : cells) {
+        for (Cell cell : this.cells) {
             Cells neighbors = cell.getNeighbors();
 
             for (Cell neighbor : neighbors) {
@@ -20,27 +20,27 @@ public class LivingCells extends Cells {
     public int getAliveNeighborsNumberFor(Cell cell) {
         Cells neighbors = cell.getNeighbors();
 
-        int numberOfNeighbors = 0;
+        int numberOfAliveNeighbors = 0;
 
         for (Cell neighbor : neighbors) {
             if (isAlive(neighbor))
-                numberOfNeighbors++;
+                numberOfAliveNeighbors++;
         }
 
-        return numberOfNeighbors;
+        return numberOfAliveNeighbors;
     }
 
     private boolean isAlive(Cell neighBorCell) {
-        return cells.contains(neighBorCell);
+        return this.cells.contains(neighBorCell);
     }
 
     @Override
     public String toString() {
         String res = "";
-        for (int i = 0; i < cells.size() - 1; ++i) {
-            res += cells.get(i).toString() + ", ";
+        for (int i = 0; i < this.cells.size() - 1; ++i) {
+            res += this.cells.get(i).toString() + ", ";
         }
-        res += cells.get(cells.size() - 1).toString();
+        res += this.cells.get(this.cells.size() - 1).toString();
         return res;
     }
 }

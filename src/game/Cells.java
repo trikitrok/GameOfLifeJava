@@ -29,23 +29,17 @@ public class Cells implements Iterable<Cell> {
     public boolean equals(Object obj) {
         if (this == obj)
             return true;
-
         if (obj == null)
             return false;
-
         if (getClass() != obj.getClass())
             return false;
-
         Cells other = (Cells) obj;
-
         if (other.cells.size() != cells.size())
             return false;
-
         for (Cell cell : cells) {
             if (!other.cells.contains(cell))
                 return false;
         }
-
         return true;
     }
 

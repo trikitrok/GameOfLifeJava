@@ -6,7 +6,7 @@ public class LivingCells extends Cells {
         Cells candidates = new Cells();
 
         for (Cell cell : this.cells) {
-            Cells neighbors = cell.getNeighbors();
+            Cells neighbors = cell.neighbors();
 
             for (Cell neighbor : neighbors) {
                 if (!isAlive(neighbor))
@@ -18,7 +18,7 @@ public class LivingCells extends Cells {
     }
 
     public int getAliveNeighborsNumberFor(Cell cell) {
-        return countAlive(cell.getNeighbors());
+        return countAlive(cell.neighbors());
     }
 
     private int countAlive(Cells neighbors) {

@@ -9,14 +9,14 @@ public class CellCross2D extends Cell2D {
     }
 
     @Override
-    public Cells getNeighbors() {
-        Cells neighborCells = new Cells();
+    public Cells neighbors() {
+        Cells neighbors = new Cells();
 
-        neighborCells.add(new CellCross2D(i - 1, j));
-        neighborCells.add(new CellCross2D(i, j + 1));
-        neighborCells.add(new CellCross2D(i + 1, j));
-        neighborCells.add(new CellCross2D(i, j - 1));
+        neighbors.add(new CellCross2D(i - 1, j));
+        neighbors.add(new CellCross2D(i, j + 1));
+        neighbors.add(new CellCross2D(i + 1, j));
+        neighbors.add(new CellCross2D(i, j - 1));
 
-        return neighborCells;
+        return neighbors;
     }
 }

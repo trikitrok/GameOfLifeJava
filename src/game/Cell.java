@@ -1,5 +1,5 @@
 package game;
 
 public interface Cell {
-    public Cells getNeighbors();
+    public Cells neighbors();
 }

@@ -8,14 +8,14 @@ public class CellX2D extends Cell2D {
         super(i, j);
     }
 
-    public Cells getNeighbors() {
-        Cells neighborCells = new Cells();
+    public Cells neighbors() {
+        Cells neighbors = new Cells();
 
-        neighborCells.add(new CellCross2D(i - 1, j - 1));
-        neighborCells.add(new CellCross2D(i - 1, j + 1));
-        neighborCells.add(new CellCross2D(i + 1, j + 1));
-        neighborCells.add(new CellCross2D(i + 1, j - 1));
+        neighbors.add(new CellCross2D(i - 1, j - 1));
+        neighbors.add(new CellCross2D(i - 1, j + 1));
+        neighbors.add(new CellCross2D(i + 1, j + 1));
+        neighbors.add(new CellCross2D(i + 1, j - 1));
 
-        return neighborCells;
+        return neighbors;
     }
 }

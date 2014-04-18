@@ -8,16 +8,16 @@ public class CellCross3D extends Cell3D {
     }
 
     @Override
-    public Cells getNeighbors() {
-        Cells neighborCells = new Cells();
+    public Cells neighbors() {
+        Cells neighbors = new Cells();
 
-        neighborCells.add(new CellCross3D(i - 1, j, k));
-        neighborCells.add(new CellCross3D(i + 1, j, k));
-        neighborCells.add(new CellCross3D(i, j - 1, k));
-        neighborCells.add(new CellCross3D(i, j + 1, k));
-        neighborCells.add(new CellCross3D(i, j, k - 1));
-        neighborCells.add(new CellCross3D(i, j, k + 1));
+        neighbors.add(new CellCross3D(i - 1, j, k));
+        neighbors.add(new CellCross3D(i + 1, j, k));
+        neighbors.add(new CellCross3D(i, j - 1, k));
+        neighbors.add(new CellCross3D(i, j + 1, k));
+        neighbors.add(new CellCross3D(i, j, k - 1));
+        neighbors.add(new CellCross3D(i, j, k + 1));
 
-        return neighborCells;
+        return neighbors;
     }
 }

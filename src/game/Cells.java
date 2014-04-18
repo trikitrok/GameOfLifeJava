@@ -22,7 +22,6 @@ public class Cells implements Iterable<Cell> {
     public void add(Cell cell) {
         if (cells.contains(cell))
             return;
-
         cells.add(cell);
     }
 

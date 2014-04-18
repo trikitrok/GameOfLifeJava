@@ -10,12 +10,10 @@ public class CellX2D extends Cell2D {
 
     public Cells neighbors() {
         Cells neighbors = new Cells();
-
         neighbors.add(new CellCross2D(i - 1, j - 1));
         neighbors.add(new CellCross2D(i - 1, j + 1));
         neighbors.add(new CellCross2D(i + 1, j + 1));
         neighbors.add(new CellCross2D(i + 1, j - 1));
-
         return neighbors;
     }
 }

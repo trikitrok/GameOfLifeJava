@@ -8,9 +8,7 @@ public class GameOfLife {
     }
 
     public void run(int steps) {
-        for (int i = 0; i < steps; ++i) {
-            if (currentGeneration.isExtinct())
-                return;
+        for (int i = 0; i < steps && !currentGeneration.isExtinct(); ++i) {
             currentGeneration = currentGeneration.produceNext();
         }
     }

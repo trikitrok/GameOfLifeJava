@@ -3,22 +3,23 @@ package game;
 public class LivingCells extends Cells {
 
     public Cells getNotAliveNeighbors() {
-        Cells candidates = new Cells();
-
+        Cells notAliveNeighbors = new Cells();
         for (Cell cell : this.cells) {
-            Cells neighbors = cell.neighbors();
-
-            for (Cell neighbor : neighbors) {
-                if (!isAlive(neighbor))
-                    candidates.add(neighbor);
-            }
+            getNotAliveNeighborsOf(cell, notAliveNeighbors);
         }
-
-        return candidates;
+        return notAliveNeighbors;
     }
 
     public int getAliveNeighborsNumberFor(Cell cell) {
         return countAlive(cell.neighbors());
+    }
+
+    private void getNotAliveNeighborsOf(Cell cell, Cells notAliveNeighbors) {
+        Cells neighbors = cell.neighbors();
+        for (Cell neighbor : neighbors) {
+            if (!isAlive(neighbor))
+                notAliveNeighbors.add(neighbor);
+        }
     }
 
     private int countAlive(Cells neighbors) {

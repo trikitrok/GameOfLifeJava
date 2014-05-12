@@ -3,6 +3,7 @@ import game.GameOfLife;
 import game.Generation;
 import game.LivingCells;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import rules.types.ConwaysRules;
@@ -10,9 +11,16 @@ import cell.types.ConwaysCell;
 
 public class ConwaysGameOfLifeTest {
 
+    private ConwaysRules conwayRules;
+
+    @Before
+    public void setUp() {
+        conwayRules = new ConwaysRules();
+    }
+
     @Test
     public void aBlockIsStillLife() {
-        GameOfLife game = new GameOfLife(new Generation(aBlock(), new ConwaysRules()));
+        GameOfLife game = new GameOfLife(new Generation(aBlock(), conwayRules));
 
         game.run(5);
 
@@ -21,7 +29,7 @@ public class ConwaysGameOfLifeTest {
 
     @Test
     public void aBeehiveIsStillLife() throws Exception {
-        GameOfLife game = new GameOfLife(new Generation(aBeehive(), new ConwaysRules()));
+        GameOfLife game = new GameOfLife(new Generation(aBeehive(), conwayRules));
 
         game.run(5);
 
@@ -30,7 +38,7 @@ public class ConwaysGameOfLifeTest {
 
     @Test
     public void aLoafIsStillLife() throws Exception {
-        GameOfLife game = new GameOfLife(new Generation(aLoaf(), new ConwaysRules()));
+        GameOfLife game = new GameOfLife(new Generation(aLoaf(), conwayRules));
 
         game.run(5);
 
@@ -39,7 +47,7 @@ public class ConwaysGameOfLifeTest {
 
     @Test
     public void aBoatIsStillLife() throws Exception {
-        GameOfLife game = new GameOfLife(new Generation(aBoat(), new ConwaysRules()));
+        GameOfLife game = new GameOfLife(new Generation(aBoat(), conwayRules));
 
         game.run(5);
 
@@ -48,7 +56,7 @@ public class ConwaysGameOfLifeTest {
 
     @Test
     public void aBlinkerOscillatesWithPeriodTwo() throws Exception {
-        GameOfLife game = new GameOfLife(new Generation(aBlinker(), new ConwaysRules()));
+        GameOfLife game = new GameOfLife(new Generation(aBlinker(), conwayRules));
 
         game.run(1);
         assertEquals("[(0, 1), (1, 1), (-1, 1)]", game.toString());
@@ -59,7 +67,7 @@ public class ConwaysGameOfLifeTest {
 
     @Test
     public void aToadOscillatesWithPeriodTwo() throws Exception {
-        GameOfLife game = new GameOfLife(new Generation(aToad(), new ConwaysRules()));
+        GameOfLife game = new GameOfLife(new Generation(aToad(), conwayRules));
 
         game.run(1);
         assertEquals("[(0, 3), (1, 0), (0, 0), (-1, 2), (1, 3), (2, 1)]", game.toString());
@@ -70,7 +78,7 @@ public class ConwaysGameOfLifeTest {
 
     @Test
     public void aGliderMovesDiagonallyWithPeriod4() throws Exception {
-        GameOfLife game = new GameOfLife(new Generation(aGlider(), new ConwaysRules()));
+        GameOfLife game = new GameOfLife(new Generation(aGlider(), conwayRules));
 
         game.run(1);
         assertEquals("[(0, 0), (0, 1), (1, 0), (-1, 1), (1, 2)]", game.toString());
